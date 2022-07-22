@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useRef } from "react";
 
-function CounterState() {
-  const [count, setCount] = useState(0);
+function CounterRef() {
+  const count = useRef(0);
 
   function handleClick() {
-    setCount((count) => count + 1);
+    count.current = count.current + 1;
+    console.log(count.current);
   }
 
   return (
@@ -15,4 +16,4 @@ function CounterState() {
   );
 }
 
-export default CounterState;
+export default CounterRef;
